@@ -1,0 +1,74 @@
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch {
+  display: none;
+}
+
+.toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch:checked + .toggle-label {
+  background-color: #4CAF50;
+}
+
+.toggle-switch:checked + .toggle-label::before {
+  transform: translateX(26px);
+}
+
+.booking-status {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.job-offers {
+  display: none;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Red background when switch is off */
+body.switch-off {
+  background-color: #FF5733;
+  color: #fff;
+}
+
+/* Green background when switch is on */
+body.switch-on {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+/* Display job offers box when switch is on */
+body.switch-on #job-offers {
+  display: block;
+}
